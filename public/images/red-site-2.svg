@@ -1,0 +1,30 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300">
+  <defs>
+    <linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#87CEEB"/><stop offset="100%" stop-color="#F0F0F0"/></linearGradient>
+  </defs>
+  <rect width="480" height="300" fill="url(#sk)"/>
+  <!-- 地面 -->
+  <rect x="0" y="230" width="480" height="70" fill="#D4C4A8"/>
+  <!-- 主体建筑 -->
+  <rect x="100" y="100" width="280" height="140" fill="#E8E0D5" stroke="#C8B898" stroke-width="2"/>
+  <!-- 屋顶 -->
+  <rect x="90" y="90" width="300" height="15" fill="#2C1810"/>
+  <polygon points="90,90 240,40 390,90" fill="#5D4037"/>
+  <!-- 牌楼 -->
+  <rect x="140" y="130" width="200" height="25" fill="#8B1A1A"/>
+  <text x="240" y="148" text-anchor="middle" fill="#FFD54F" font-size="10" font-weight="bold">枫香溪会议纪念馆</text>
+  <!-- 柱 -->
+  <rect x="140" y="155" width="8" height="85" fill="#C8B898"/>
+  <rect x="332" y="155" width="8" height="85" fill="#C8B898"/>
+  <!-- 门 -->
+  <rect x="200" y="170" width="80" height="70" fill="#5D4037" rx="2"/>
+  <!-- 台阶 -->
+  <rect x="180" y="240" width="120" height="8" fill="#B8A888"/>
+  <rect x="170" y="248" width="140" height="8" fill="#A89878"/>
+  <!-- 红旗 -->
+  <line x1="130" y1="200" x2="130" y2="140" stroke="#5D4037" stroke-width="2"/>
+  <polygon points="130,140 155,148 130,158" fill="#C41E3A"/>
+  <!-- 树木 -->
+  <circle cx="70" cy="200" r="22" fill="#2E7D32" opacity="0.6"/>
+  <rect x="68" y="215" width="4" height="25" fill="#5D4037"/>
+</svg>

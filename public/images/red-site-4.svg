@@ -1,0 +1,29 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300">
+  <defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8E0D5"/><stop offset="100%" stop-color="#C8B898"/></linearGradient></defs>
+  <rect width="480" height="300" fill="#E8F4FD"/>
+  <rect x="0" y="200" width="480" height="100" fill="#D4C4A8"/>
+  <!-- 古庙主体 -->
+  <rect x="120" y="100" width="240" height="130" fill="url(#s)" stroke="#A89878" stroke-width="1.5"/>
+  <!-- 庙顶 -->
+  <polygon points="100,100 240,30 380,100" fill="#4A3728"/>
+  <polygon points="110,100 240,38 370,100" fill="#3E2723"/>
+  <polygon points="100,100 240,30 115,100" fill="#5D4037"/>
+  <polygon points="380,100 240,30 365,100" fill="#5D4037"/>
+  <!-- 飞檐 -->
+  <path d="M100,100 Q85,90 75,100" fill="#4A3728"/>
+  <path d="M380,100 Q395,90 405,100" fill="#4A3728"/>
+  <!-- 门 -->
+  <rect x="210" y="170" width="60" height="60" fill="#3E2723" rx="3"/>
+  <!-- 红色十字 -->
+  <rect x="230" y="160" width="20" height="40" fill="#C41E3A" rx="2"/>
+  <rect x="220" y="170" width="40" height="20" fill="#C41E3A" rx="2"/>
+  <!-- 窗 -->
+  <circle cx="155" cy="155" r="12" fill="#5D4037"/>
+  <circle cx="325" cy="155" r="12" fill="#5D4037"/>
+  <!-- 牌匾 -->
+  <rect x="170" y="110" width="140" height="18" fill="#8B1A1A" rx="2"/>
+  <text x="240" y="123" text-anchor="middle" fill="#FFD54F" font-size="8" font-weight="bold">红三军医院旧址</text>
+  <!-- 树木 -->
+  <circle cx="60" cy="190" r="22" fill="#2E7D32" opacity="0.6"/>
+  <rect x="58" y="205" width="4" height="25" fill="#5D4037"/>
+</svg>
