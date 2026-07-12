@@ -1,0 +1,23 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300">
+  <defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8D5B7"/><stop offset="100%" stop-color="#D4C4A8"/></linearGradient></defs>
+  <rect width="480" height="300" fill="#F5F0EB"/>
+  <rect x="0" y="220" width="480" height="80" fill="#D4C4A8"/>
+  <!-- 土家木屋 -->
+  <rect x="140" y="120" width="200" height="120" fill="url(#w)" stroke="#B8A888" stroke-width="1"/>
+  <polygon points="120,120 240,60 360,120" fill="#4A3728"/>
+  <polygon points="130,120 240,68 350,120" fill="#3E2723"/>
+  <!-- 门 -->
+  <rect x="210" y="180" width="60" height="60" fill="#5D4037" rx="2"/>
+  <!-- 标语墙 -->
+  <rect x="150" y="135" width="80" height="35" fill="#F5F0EB" rx="2"/>
+  <text x="190" y="150" text-anchor="middle" fill="#C41E3A" font-size="6" font-weight="bold">打土豪</text>
+  <text x="190" y="162" text-anchor="middle" fill="#C41E3A" font-size="6" font-weight="bold">分田地</text>
+  <!-- 窗 -->
+  <rect x="330" y="155" width="25" height="25" fill="#3E2723" rx="1"/>
+  <!-- 牌 -->
+  <rect x="175" y="128" width="130" height="16" fill="#8B1A1A" rx="2"/>
+  <text x="240" y="140" text-anchor="middle" fill="#FFD54F" font-size="7" font-weight="bold">红三军政治部旧址</text>
+  <!-- 树 -->
+  <circle cx="400" cy="200" r="18" fill="#2E7D32" opacity="0.5"/>
+  <rect x="398" y="210" width="4" height="25" fill="#5D4037"/>
+</svg>

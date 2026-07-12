@@ -1,0 +1,23 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="480" height="280" viewBox="0 0 480 280">
+  <rect width="480" height="280" fill="#FFF8F0"/>
+  <rect x="0" y="240" width="480" height="40" fill="#C8A080"/>
+  <path d="M0 240 Q150 190 300 210 Q420 180 480 200 L480 280 L0 280Z" fill="#A08060" opacity="0.3"/>
+  <!-- 花椒树 -->
+  <rect x="107" y="190" width="6" height="55" fill="#6B4A1A" rx="2"/>
+  <!-- 树枝 -->
+  <path d="M110 200 Q90 180 70 175" stroke="#6B4A1A" stroke-width="2"/>
+  <path d="M110 195 Q130 175 150 170" stroke="#6B4A1A" stroke-width="2"/>
+  <path d="M110 190 Q105 165 100 155" stroke="#6B4A1A" stroke-width="1.5"/>
+  <!-- 花椒粒 -->
+  <circle cx="70" cy="173" r="4" fill="#8B0000"/><circle cx="68" cy="177" r="3" fill="#A00000"/>
+  <circle cx="150" cy="168" r="4" fill="#8B0000"/><circle cx="153" cy="172" r="3" fill="#A00000"/>
+  <circle cx="100" cy="153" r="4" fill="#8B0000"/><circle cx="97" cy="157" r="3" fill="#A00000"/>
+  <!-- 叶子 -->
+  <ellipse cx="75" cy="168" rx="6" ry="3" fill="#3E7A3A" opacity="0.6"/>
+  <ellipse cx="145" cy="163" rx="6" ry="3" fill="#3E7A3A" opacity="0.6"/>
+  <!-- 第二棵树 -->
+  <rect x="347" y="195" width="6" height="50" fill="#6B4A1A" rx="2"/>
+  <circle cx="350" cy="185" r="4" fill="#8B0000"/><circle cx="347" cy="189" r="3" fill="#A00000"/>
+  <circle cx="358" cy="182" r="4" fill="#A00000"/>
+  <text x="240" y="265" text-anchor="middle" fill="#8B0000" font-size="11" font-weight="bold">花椒种植基地</text>
+</svg>

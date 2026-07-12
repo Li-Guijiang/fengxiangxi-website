@@ -1,0 +1,31 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300">
+  <defs>
+    <linearGradient id="sk3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D4C4A8"/><stop offset="60%" stop-color="#B8A888"/><stop offset="100%" stop-color="#7B9E7B"/></linearGradient>
+  </defs>
+  <rect width="480" height="300" fill="url(#sk3)"/>
+  <!-- 山林背景 -->
+  <path d="M0 220 Q100 160 200 190 Q300 140 400 180 Q450 160 480 180 L480 300 L0 300Z" fill="#5D8A5D" opacity="0.3"/>
+  <!-- 纪念碑主体 -->
+  <rect x="215" y="60" width="50" height="180" fill="#D4C4A8" stroke="#B8A888" stroke-width="1"/>
+  <rect x="210" y="55" width="60" height="12" fill="#C8B898"/>
+  <!-- 碑顶红旗 -->
+  <polygon points="240,40 230,48 240,55 250,48" fill="#C41E3A"/>
+  <line x1="240" y1="40" x2="240" y2="55" stroke="#C41E3A" stroke-width="2"/>
+  <!-- 碑文 -->
+  <rect x="225" y="85" width="30" height="4" fill="#5D4037" opacity="0.3"/>
+  <rect x="225" y="95" width="30" height="3" fill="#5D4037" opacity="0.3"/>
+  <rect x="225" y="103" width="30" height="4" fill="#5D4037" opacity="0.3"/>
+  <!-- 基座 -->
+  <rect x="200" y="235" width="80" height="15" fill="#A89878"/>
+  <!-- 台阶 -->
+  <rect x="180" y="250" width="120" height="8" fill="#B8A888"/>
+  <rect x="170" y="258" width="140" height="8" fill="#C8B898"/>
+  <!-- 花圈 -->
+  <circle cx="195" cy="240" r="10" fill="none" stroke="#2E7D32" stroke-width="1.5"/>
+  <circle cx="285" cy="240" r="10" fill="none" stroke="#2E7D32" stroke-width="1.5"/>
+  <!-- 树木 -->
+  <circle cx="70" cy="210" r="25" fill="#3E6B3E" opacity="0.5"/>
+  <circle cx="400" cy="215" r="28" fill="#3E6B3E" opacity="0.5"/>
+  <rect x="68" y="225" width="4" height="35" fill="#5D4037"/>
+  <rect x="398" y="230" width="4" height="30" fill="#5D4037"/>
+</svg>

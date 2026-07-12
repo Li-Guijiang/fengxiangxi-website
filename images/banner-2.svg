@@ -1,0 +1,31 @@
+<!-- 第二个Banner — 黔东革命根据地 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="500" viewBox="0 0 1920 500">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4A0E0E"/>
+      <stop offset="100%" stop-color="#C8A96E"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5D4037"/>
+      <stop offset="100%" stop-color="#2C1810"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="500" fill="url(#sky2)"/>
+  <!-- 群山层叠 -->
+  <path d="M0 320 Q150 250 350 300 Q500 220 650 290 Q800 200 950 280 Q1100 230 1250 275 Q1400 210 1550 285 Q1700 240 1920 290 L1920 500 L0 500Z" fill="url(#hill)" opacity="0.5"/>
+  <path d="M0 370 Q200 300 450 340 Q600 280 750 325 Q900 260 1050 315 Q1200 270 1400 320 Q1550 280 1920 330 L1920 500 L0 500Z" fill="url(#hill)" opacity="0.75"/>
+  <path d="M0 410 Q250 350 500 380 Q700 330 900 370 Q1100 320 1350 365 Q1500 340 1920 380 L1920 500 L0 500Z" fill="#2C1810" opacity="0.9"/>
+  <!-- 行军队伍剪影 -->
+  <g fill="#1A0A05" opacity="0.7">
+    <rect x="100" y="390" width="3" height="15"/><circle cx="101.5" cy="388" r="2.5"/>
+    <rect x="120" y="388" width="3" height="17"/><circle cx="121.5" cy="386" r="2.5"/>
+    <rect x="140" y="392" width="3" height="13"/><circle cx="141.5" cy="390" r="2.5"/>
+    <rect x="160" y="386" width="3" height="19"/><circle cx="161.5" cy="384" r="2.5"/>
+    <rect x="180" y="391" width="3" height="14"/><circle cx="181.5" cy="389" r="2.5"/>
+    <rect x="200" y="389" width="3" height="16"/><circle cx="201.5" cy="387" r="2.5"/>
+    <rect x="220" y="385" width="3" height="20"/><circle cx="221.5" cy="383" r="2.5"/>
+    <!-- 旗帜 -->
+    <line x1="220" y1="385" x2="220" y2="360" stroke="#C41E3A" stroke-width="1.5"/>
+    <polygon points="220,360 240,365 220,375" fill="#C41E3A"/>
+  </g>
+</svg>

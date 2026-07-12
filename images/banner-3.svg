@@ -1,0 +1,33 @@
+<!-- 第三个Banner — 乡村振兴 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="500" viewBox="0 0 1920 500">
+  <defs>
+    <linearGradient id="sky3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1B5E20"/>
+      <stop offset="50%" stop-color="#2E7D32"/>
+      <stop offset="100%" stop-color="#C8A96E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="500" fill="url(#sky3)"/>
+  <!-- 梯田 -->
+  <path d="M0 250 Q100 220 200 250 Q300 230 400 260 Q500 240 600 270 Q700 250 800 280 Q900 260 1000 290 Q1100 270 1200 300 Q1300 280 1400 310 Q1500 290 1600 320 Q1700 300 1800 330 Q1900 310 1920 340 L1920 500 L0 500Z" fill="#2E7D32" opacity="0.3"/>
+  <path d="M0 320 Q150 290 300 320 Q450 300 600 330 Q750 310 900 340 Q1050 320 1200 350 Q1350 330 1500 360 Q1650 340 1800 370 Q1900 350 1920 380 L1920 500 L0 500Z" fill="#1B5E20" opacity="0.4"/>
+  <path d="M0 400 Q200 370 400 400 Q600 380 800 410 Q1000 390 1200 420 Q1400 400 1600 430 Q1800 410 1920 440 L1920 500 L0 500Z" fill="#2C1810" opacity="0.6"/>
+  <!-- 茶树丛 -->
+  <g fill="#1B5E20" opacity="0.5">
+    <ellipse cx="300" cy="350" rx="30" ry="15"/>
+    <ellipse cx="350" cy="345" rx="25" ry="12"/>
+    <ellipse cx="700" cy="360" rx="28" ry="14"/>
+    <ellipse cx="750" cy="355" rx="22" ry="11"/>
+    <ellipse cx="1100" cy="365" rx="30" ry="15"/>
+    <ellipse cx="1150" cy="358" rx="25" ry="12"/>
+    <ellipse cx="1600" cy="370" rx="28" ry="14"/>
+    <ellipse cx="1650" cy="365" rx="22" ry="11"/>
+  </g>
+  <!-- 远景村落 -->
+  <g fill="#3E2723" opacity="0.4">
+    <rect x="500" y="330" width="40" height="25"/>
+    <polygon points="495,330 520,305 545,330"/>
+    <rect x="560" y="335" width="30" height="20"/>
+    <polygon points="555,335 575,315 595,335"/>
+  </g>
+</svg>

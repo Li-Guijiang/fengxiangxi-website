@@ -1,0 +1,18 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300">
+  <defs><linearGradient id="q" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8D8C0"/><stop offset="100%" stop-color="#D4C4A8"/></linearGradient></defs>
+  <rect width="480" height="300" fill="#F5F0EB"/>
+  <rect x="0" y="235" width="480" height="65" fill="#C8B898"/>
+  <!-- 两座院落 -->
+  <rect x="80" y="140" width="140" height="115" fill="url(#q)" stroke="#B8A888" stroke-width="0.5"/>
+  <polygon points="65,140 150,90 235,140" fill="#4A3728"/>
+  <rect x="260" y="140" width="140" height="115" fill="url(#q)" stroke="#B8A888" stroke-width="0.5"/>
+  <polygon points="245,140 330,90 415,140" fill="#4A3728"/>
+  <!-- 牌 -->
+  <rect x="106" y="150" width="88" height="14" fill="#8B1A1A" rx="2"/>
+  <text x="150" y="161" text-anchor="middle" fill="#FFD54F" font-size="6" font-weight="bold">红七师师部</text>
+  <rect x="286" y="150" width="88" height="14" fill="#8B1A1A" rx="2"/>
+  <text x="330" y="161" text-anchor="middle" fill="#FFD54F" font-size="6" font-weight="bold">红九师师部</text>
+  <!-- 门 -->
+  <rect x="125" y="200" width="50" height="55" fill="#5D4037" rx="2"/>
+  <rect x="305" y="200" width="50" height="55" fill="#5D4037" rx="2"/>
+</svg>
