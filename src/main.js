@@ -1,11 +1,11 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
+import './assets/global.css'
 import App from './App.vue'
 import Home from './views/Home.vue'
 import RedCulture from './views/RedCulture.vue'
 import GreenIndustry from './views/GreenIndustry.vue'
 import About from './views/About.vue'
-import './assets/global.css'
 
 const routes = [
   { path: '/', name: 'Home', component: Home, meta: { title: '首页' } },
@@ -21,7 +21,7 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
-  document.title = `${to.meta.title} - 枫香溪数智乡村官网`
+  document.title = '数智枫香溪网站'
 })
 
 const app = createApp(App)

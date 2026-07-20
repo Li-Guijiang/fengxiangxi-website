@@ -9,7 +9,7 @@ const messages = {
     'nav.locale': '枫香溪 · 德江县 · 铜仁市',
 
     // Home Hero
-    'home.badge': '枫香溪数智乡村官网',
+    'home.badge': '数智枫香溪网站',
     'home.heroTitle1': '枫香溪会议会址', 'home.heroTitle2': '黔东革命根据地',
     'home.heroTitle3': '红色文化·绿色产业', 'home.heroTitle4': '德江县·枫香溪镇', 'home.heroTitle5': '武陵山脉红色热土',
     'home.sub1': '全国重点文物保护单位 · 1934红三军历史转折地',
@@ -94,10 +94,10 @@ const messages = {
 
     // About
     'about.badge': '关于本站', 'about.heroTitle': '数字赋能 · 乡村振兴',
-    'about.heroDesc': '枫香溪数智乡村官方网站开发与迭代计划',
+    'about.heroDesc': '数智枫香溪网站开发与迭代计划',
     'about.devBadge': '网站开发者', 'about.devName': '李贵江',
     'about.devRole': '全栈开发工程师 · 本网站架构设计与开发者',
-    'about.devDesc': '负责枫香溪数智乡村官网的整体架构设计、前后端开发、AI智能功能集成与持续迭代优化。致力于运用数字技术助力乡村振兴，传承红色文化基因，让枫香溪的故事被更多人看见。',
+    'about.devDesc': '负责数智枫香溪网站的整体架构设计、前后端开发、AI智能功能集成与持续迭代优化。致力于运用数字技术助力乡村振兴，传承红色文化基因，让枫香溪的故事被更多人看见。',
     'about.devMotto': '数字赋能乡村，科技传承红色基因',
     'about.contactTitle': '📬 开发者联系方式',
     'about.contactPhone': '电话', 'about.contactQQ': 'QQ', 'about.contactEmail': '邮箱',
@@ -109,7 +109,7 @@ const messages = {
     'about.roadmap': '功能迭代路线图', 'about.roadmapSub': '本站持续更新中 · 以下为计划升级时间线',
     'about.techTitle': '技术架构',
     'about.techFront': '🌐 前端', 'about.techBack': '⚙️ 后端（计划中）', 'about.techDeploy': '🚀 部署',
-    'about.phase1': 'v1.0 · 已上线', 'about.phase1title': '前端官网',
+    'about.phase1': 'v1.0 · 已上线', 'about.phase1title': '前端网站',
     'about.phase2': 'v2.0 · 开发中', 'about.phase2title': 'AI智能问答',
     'about.phase3': 'v3.0 · 规划中', 'about.phase3title': '用户系统',
     'about.phase4': 'v4.0 · 规划中', 'about.phase4title': '数据平台',
@@ -134,7 +134,7 @@ const messages = {
     'footer.brand': '枫香溪数智乡村', 'footer.locale': '贵州省铜仁市德江县枫香溪镇',
     'footer.slogan': '传承红色基因 · 助力乡村振兴',
     'footer.dev': '网站开发：李贵江', 'footer.team': '三下乡·枫香溪实践团',
-    'footer.copy': '© 2026 枫香溪数智乡村官网 · 三下乡实践项目',
+    'footer.copy': '© 2026 数智枫香溪网站 · 三下乡实践项目',
     'footer.nav': '导航', 'footer.overview': '枫香溪概况',
     'footer.l1': '📍 贵州省德江县枫香溪镇枫溪社区', 'footer.l2': '🏛️ 全国重点文物保护单位',
     'footer.l3': '🎖️ 贵州省爱国主义教育基地', 'footer.l4': '🌲 森林覆盖率 79.5% | 海拔 700-800m',

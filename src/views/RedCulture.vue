@@ -1,11 +1,11 @@
 <template>
   <div class="red-page">
     <!-- ═══ Hero ═══ -->
-    <section class="hero-red">
+    <section class="hero-red hero-sweep">
       <div class="hero-particles"><span v-for="n in 20" :key="n" class="hp-dot" :style="particleStyle(n)"></span></div>
       <div class="container hero-content">
         <div class="hero-badge"><span class="dot"></span>{{ t('red.badge') }}</div>
-        <h1 class="hero-title">{{ t('red.heroTitle') }}<br><TypeWriter :texts="typeTexts" :typeSpeed="90" :pauseMs="2500" /></h1>
+        <div class="hero-title-wrap"><h1 class="hero-title">{{ t('red.heroTitle') }}</h1><div class="hero-tw"><TypeWriter :texts="typeTexts" :typeSpeed="90" :pauseMs="2500" /></div></div>
         <p class="hero-desc">{{ t('red.heroDesc') }}</p>
         <div class="hero-stats">
           <div class="stat"><span class="stat-num">{{ t('red.statsSitesVal') }}</span><span class="stat-lbl">{{ t('red.statsSites') }}</span></div>
@@ -28,10 +28,23 @@
       </div>
     </section>
 
+    <!-- AI数字人主播视频 -->
+    <section class="section red-video-section">
+      <div class="container">
+        <div class="red-video-block reveal">
+          <div class="rvb-badge">🤖 AI数字人主播 · 红色枫香溪</div>
+          <div class="rvb-container glass-card">
+            <video src="/videos/红色文旅.mp4" controls playsinline preload="metadata" class="rvb-video"></video>
+          </div>
+          <p class="rvb-hint">🎬 点击播放，跟随AI主播云游红色枫香溪</p>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ 十二处核心遗址 ═══ -->
     <section class="section sites-section">
       <div class="container">
-        <h2 class="section-title">{{ t('red.sitesTitle') }}</h2>
+        <h2 class="section-title glow-text">{{ t('red.sitesTitle') }}</h2>
         <div class="section-divider"></div>
         <p class="section-subtitle">全国重点文物保护单位 · 省级爱国主义教育基地</p>
 
@@ -102,7 +115,7 @@
     <!-- ═══ 红色人物 ═══ -->
     <section class="section figures-section">
       <div class="container">
-        <h2 class="section-title">{{ t('red.figuresTitle') }}</h2>
+        <h2 class="section-title glow-text">{{ t('red.figuresTitle') }}</h2>
         <div class="section-divider"></div>
         <p class="section-subtitle">枫香溪走出的革命战士 · 源出《红色的记忆》八一爱民学校特色教材</p>
 
@@ -172,7 +185,7 @@
     <!-- ═══ 红色歌谣 ═══ -->
     <section class="section songs-section">
       <div class="container">
-        <h2 class="section-title">{{ t('red.songsTitle') }}</h2>
+        <h2 class="section-title glow-text">{{ t('red.songsTitle') }}</h2>
         <div class="section-divider"></div>
         <div class="songs-list reveal">
           <div v-for="(song, si) in redSongs" :key="si" class="song-row glass-card"
@@ -473,4 +486,10 @@ const particleStyle = (n) => ({
   .figures-grid { grid-template-columns: 1fr; }
   .fc-img { height: 160px; }
 }
+.red-video-section{background:linear-gradient(180deg,var(--bg-primary)0%,rgba(127,0,0,.03)50%,var(--bg-primary)100%)}.red-video-block{max-width:720px;margin:0 auto;text-align:center}.rvb-badge{margin-bottom:14px;font-size:.85rem;color:var(--text-secondary)}.rvb-container{overflow:hidden;border-radius:var(--radius-lg)}.rvb-video{width:100%;display:block;background:#000}.rvb-hint{margin-top:10px;font-size:.75rem;color:var(--text-muted)}
+.red-video-section{background:linear-gradient(180deg,var(--bg-primary)0%,rgba(127,0,0,.03)50%,var(--bg-primary)100%)}.red-video-block{max-width:720px;margin:0 auto;text-align:center}.rvb-badge{margin-bottom:14px;font-size:.85rem;color:var(--text-secondary)}.rvb-container{overflow:hidden;border-radius:var(--radius-lg)}.rvb-video{width:100%;display:block;background:#000}.rvb-hint{margin-top:10px;font-size:.75rem;color:var(--text-muted)}
+
+.hero-title-wrap{display:flex;flex-direction:column;align-items:center;width:100%}
+.hero-tw{min-height:1.5em;display:flex;align-items:center;justify-content:center}
+.hero-tw .typewriter{display:flex;justify-content:center;text-align:center}
 </style>

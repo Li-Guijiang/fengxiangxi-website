@@ -74,7 +74,7 @@
     <!-- ═══ 三下乡团队信息 ═══ -->
     <section class="section team-section">
       <div class="container">
-        <h2 class="section-title">{{ t('about.teamTitle') }}</h2>
+        <h2 class="section-title glow-text">{{ t('about.teamTitle') }}</h2>
         <div class="section-divider"></div>
         <p class="section-subtitle">{{ t('about.teamSubtitle') }}</p>
 
@@ -156,7 +156,7 @@
     <!-- ═══ 功能路线图 ═══ -->
     <section class="section roadmap-section">
       <div class="container">
-        <h2 class="section-title">{{ t('about.roadmap') }}</h2>
+        <h2 class="section-title glow-text">{{ t('about.roadmap') }}</h2>
         <div class="section-divider"></div>
         <p class="section-subtitle">{{ t('about.roadmapSub') }}</p>
 
@@ -188,7 +188,7 @@
     <!-- ═══ 技术栈 ═══ -->
     <section class="section tech-section">
       <div class="container">
-        <h2 class="section-title">{{ t('about.techTitle') }}</h2>
+        <h2 class="section-title glow-text">{{ t('about.techTitle') }}</h2>
         <div class="section-divider"></div>
         <div class="tech-grid reveal">
           <div class="tech-card glass-card">

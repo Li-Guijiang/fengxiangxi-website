@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
     <!-- ═══ Hero ═══ -->
-    <section class="hero" @mousemove="onHeroMouse" @mouseleave="glowPos = null">
+    <section class="hero hero-sweep" @mousemove="onHeroMouse" @mouseleave="glowPos = null">
       <!-- 动态渐变背景 -->
       <div class="hero-bg-layer">
         <div class="hero-gradient hero-grad-1"></div>
@@ -68,7 +68,7 @@
       <div class="container">
         <div class="intro-block reveal">
           <span class="intro-label">{{ t('home.introLabel') }}</span>
-          <h2 class="section-title" style="text-align:left;">{{ t('home.introTitle') }}</h2>
+          <h2 class="section-title glow-text" style="text-align:left;">{{ t('home.introTitle') }}</h2>
           <p class="intro-text">{{ t('home.introContent') }}</p>
           <div class="intro-features">
             <div v-for="f in i18nFeatures" :key="f.title" class="if-item"
@@ -117,7 +117,7 @@
     <!-- ═══ 数据 ═══ -->
     <section class="section stats-section">
       <div class="container">
-        <h2 class="section-title">{{ t('home.statsTitle') }}</h2>
+        <h2 class="section-title glow-text">{{ t('home.statsTitle') }}</h2>
         <div class="section-divider"></div>
         <div class="stats-grid reveal">
           <div v-for="s in i18nStats" :key="s.label" class="stat-card glass-card">

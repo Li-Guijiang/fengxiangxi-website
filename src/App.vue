@@ -106,6 +106,7 @@ import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import NavBar from './components/NavBar.vue'
 import Footer from './components/Footer.vue'
 import './composables/useTheme.js'
+import { useGlobalFX } from './composables/useGlobalFX.js'
 import { useSettings } from './composables/useSettings.js'
 import { useI18n } from './composables/useI18n.js'
 
@@ -132,24 +133,35 @@ const chatMessages = ref([])
 const chatBodyRef = ref(null)
 
 const quickQuestions = computed(() => locale.value === 'en'
-  ? ['Where is Fengxiangxi?', 'Red tourism sites?', 'Local products?', 'How to get there?']
-  : ['枫香溪在哪里？', '有什么红色景点？', '当地特产有哪些？', '如何前往枫香溪？'])
+  ? ['Where is Fengxiangxi?', 'Red sites?', 'Local products?', 'Red Army history?', 'How to visit?']
+  : ['枫香溪在哪里？', '红色景点有哪些？', '当地特产是什么？', '红三军历史', '怎么去枫香溪？'])
+
+const zhKB = {
+  '位置':'枫香溪镇位于贵州省铜仁市德江县东南部，武陵山脉腹地。平均海拔700-800米，森林覆盖率79.5%。',
+  '历史':'1934年6月19日，贺龙、夏曦、关向应率红三军到达枫香溪召开"枫香溪会议"，建立黔东革命根据地。',
+  '景点':'23处红色遗址，12处核心景点：会议会址、政治部旧址、保卫局旧址、参谋部旧址、七师/九师师部旧址、医院旧址、纪念碑、三洞桥、红军井、红军桥、革委会旧址。',
+  '人物':'五位红色人物：王时刚、王治春、王安成、王太明、冉启江（均为援老抗美/对越自卫反击战战士）。',
+  '产业':'五大绿色产业：高山天麻、高山云雾抹茶（1.2万亩）、德江高山好李子、德江苹果桃、德江山泉好茭白（500亩）。人均收入12,500元。',
+  '交通':'先到铜仁市区→班车到德江（1.5h）→驱车40分钟达枫香溪。推荐自驾。',
+  '团队':'贵州开放大学三下乡实践团16名成员+3位指导老师，2026年6月25日至7月1日调研。',
+}
+const enKB = {
+  'location':'Fengxiangxi in SE Dejiang County, Tongren, Guizhou, Wuling Mountains at 700-800m.',
+  'history':'June 19, 1934, He Long led Red Third Army to Fengxiangxi for historic conference.',
+  'sites':'23 red sites, 12 core: Conference Site, Division HQs, Hospital, Monument, Bridges, Well.',
+  'industries':'Gastrodia, Matcha (12,000mu), Plums, Apple Peaches, Bamboo Shoots. Income 12,500 yuan.',
+  'transport':'Tongren to bus to Dejiang(1.5h) to 40min drive to Fengxiangxi.',
+}
 
 const aiResponses = computed(() => locale.value === 'en' ? {
-  'Where is Fengxiangxi?': 'Fengxiangxi is in southeast Dejiang County, Tongren, Guizhou, in the Wuling Mountains. The Red Third Army established the East Guizhou Revolutionary Base here in 1934.',
-  'Red tourism sites?': 'Fengxiangxi has 23 red cultural sites including the Conference Site (National Heritage), Sandong Bridge, 7th Division HQ, Monument, Red Army Well, Red Army Bridge, and more.',
-  'Local products?': 'Five green industries: Alpine Gastrodia, Matcha Tea (12,000 mu), Dejiang Plums, Apple Peaches, and Bamboo Shoots (500 mu). Visit Green Industry page!',
-  'How to get there?': 'Reach Tongren first → bus to Dejiang → 40 min drive to Fengxiangxi. Driving recommended for Wuling Mountain scenery!',
+  'Where is Fengxiangxi?': enKB.location, 'Red sites?': enKB.sites, 'Local products?': enKB.industries, 'Red Army history?': enKB.history, 'How to visit?': enKB.transport,
 } : {
-  '枫香溪在哪里？': '枫香溪位于贵州省铜仁市德江县东南部，武陵山脉腹地。1934年红三军在此创建黔东革命根据地，是全国重点文物保护单位。',
-  '有什么红色景点？': '枫香溪拥有23处红色遗址，八大核心景点：会议会址、三洞桥、七师师部旧址、纪念碑、红军井、红军桥、革委会旧址、医院旧址。',
-  '当地特产有哪些？': '五大绿色产业：高山天麻、高山云雾抹茶（1.2万亩茶园）、德江高山好李子、德江苹果桃、德江山泉好茭白（500亩坝区）。',
-  '如何前往枫香溪？': '先到铜仁市区，乘班车到德江县，从县城驱车约40分钟到枫香溪镇。建议自驾或包车，沿途欣赏武陵山脉美景。',
+  '枫香溪在哪里？': zhKB['位置'], '红色景点有哪些？': zhKB['景点'], '当地特产是什么？': zhKB['产业'], '红三军历史': zhKB['历史'], '怎么去枫香溪？': zhKB['交通'],
 })
 
 const sendQuick = (q) => {
   chatMessages.value.push({ role: 'user', text: q })
-  const reply = aiResponses.value[q] || (locale.value === 'en' ? 'Thanks! Ask me about Fengxiangxi.' : '感谢！问我关于枫香溪的问题吧。')
+  const reply = aiResponses.value[q] || (locale.value === 'en' ? 'Thanks!' : '感谢！')
   setTimeout(() => { chatMessages.value.push({ role: 'assistant', text: reply }); scrollChatBottom() }, 500)
 }
 const sendMessage = () => {
@@ -157,13 +169,14 @@ const sendMessage = () => {
   if (!text) return
   chatMessages.value.push({ role: 'user', text })
   chatInput.value = ''
-  let reply = locale.value === 'en' ? 'Thanks! Browse our pages for more info.' : '感谢！浏览网站页面了解更多。'
-  for (const [q, a] of Object.entries(aiResponses.value)) {
-    if (text.includes(q.replace('？', '').replace('?', ''))) { reply = a; break }
-  }
-  if (/你好|您好|hello|hi/i.test(text)) reply = locale.value === 'en' ? 'Hello! I am the Fengxiangxi AI Assistant. How can I help?' : '您好！我是枫香溪AI助手，有什么可以帮您？'
+  const kb = locale.value === 'en' ? enKB : zhKB
+  let reply = locale.value === 'en' ? 'Thanks! Browse our pages.' : '感谢！浏览网站页面了解更多。'
+  for (const [q, a] of Object.entries(aiResponses.value)) { if (text.includes(q.replace('？','').replace('?',''))) { reply = a; break } }
+  if (reply.includes('浏览')) { for (const [k, v] of Object.entries(kb)) { if (text.includes(k)) { reply = v; break } } }
+  if (/你好|您好|hello|hi/i.test(text)) reply = locale.value === 'en' ? 'Hello! Welcome to Fengxiangxi!' : '您好！我是数智枫香溪AI助手。'
   setTimeout(() => { chatMessages.value.push({ role: 'assistant', text: reply }); scrollChatBottom() }, 500)
 }
+
 const scrollChatBottom = async () => {
   await nextTick()
   if (chatBodyRef.value) chatBodyRef.value.scrollTop = chatBodyRef.value.scrollHeight

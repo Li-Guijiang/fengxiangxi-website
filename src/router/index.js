@@ -38,7 +38,7 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
-  document.title = `${to.meta.title} - 枫香溪数智乡村官网`
+  document.title = `${to.meta.title} - 数智枫香溪网站`
 })
 
 export default router

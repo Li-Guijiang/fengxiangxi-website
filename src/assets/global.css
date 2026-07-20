@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   枫香溪数智乡村官网 · Design System
+   数智枫香溪网站 · Design System
    设计理念：红色文化 + 数字科技 + 玻璃拟态
    ═══════════════════════════════════════════════════════ */
 
@@ -804,3 +804,784 @@ html[data-font-size="xlarge"] { font-size: 20px; }
   html { font-size: 13px; }
   .section { padding: 40px 0; }
 }
+
+/* ═══════ Light Theme Contrast Fixes ═══════ */
+[data-theme=light] .settings-section h3,[data-theme=light] .settings-section label,
+[data-theme=sunset] .settings-section h3,[data-theme=sunset] .settings-section label,
+[data-theme=lavender] .settings-section h3,[data-theme=lavender] .settings-section label{color:var(--text-primary)!important}
+[data-theme=light] .theme-picker-panel,[data-theme=sunset] .theme-picker-panel,
+[data-theme=lavender] .theme-picker-panel{background:rgba(255,255,255,.94)!important;color:var(--text-primary)!important}
+[data-theme=light] .ai-chat-title,[data-theme=sunset] .ai-chat-title,
+[data-theme=lavender] .ai-chat-title{color:var(--text-primary)!important}
+[data-theme=light] .font-size-btns button,[data-theme=sunset] .font-size-btns button,
+[data-theme=lavender] .font-size-btns button{color:var(--text-secondary)}
+[data-theme=light] .font-size-btns button.active,[data-theme=sunset] .font-size-btns button.active,
+[data-theme=lavender] .font-size-btns button.active{background:rgba(198,40,40,.1);color:var(--red-primary)}
+[data-theme=light] .img-style-btns button,[data-theme=sunset] .img-style-btns button,
+[data-theme=lavender] .img-style-btns button{color:var(--text-secondary)}
+[data-theme=light] .img-style-btns button.active,[data-theme=sunset] .img-style-btns button.active,
+[data-theme=lavender] .img-style-btns button.active{background:rgba(200,169,110,.15);color:var(--gold-primary)}
+
+/* ═══════ Visual Effects ═══════ */
+@keyframes borderGlow{0%,100%{border-color:rgba(200,169,110,.08)}50%{border-color:rgba(200,169,110,.3)}}
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes gentlePulse{0%,100%{box-shadow:0 0 20px rgba(200,169,110,.05)}50%{box-shadow:0 0 40px rgba(200,169,110,.12)}}
+@keyframes shimmerBg{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes rotateSlow{100%{transform:rotate(360deg)}}
+
+.glass-card:hover{box-shadow:var(--shadow-gold),0 0 30px rgba(200,169,110,.06)}
+.glow-on-hover{transition:all .4s var(--ease-out-expo)}
+.glow-on-hover:hover{box-shadow:0 0 40px rgba(200,169,110,.15),0 0 80px rgba(198,40,40,.06)}
+.shimmer-line{background:linear-gradient(90deg,transparent,rgba(200,169,110,.15),transparent);background-size:200% 100%;animation:shimmerBg 3s infinite}
+.section-divider{background:linear-gradient(90deg,transparent,var(--gold-primary),transparent);width:80px}
+
+/* Floating particles for hero sections */
+.hero-glow-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.06}
+.hero-glow-orb.red{background:var(--red-primary);width:300px;height:300px}
+.hero-glow-orb.gold{background:var(--gold-primary);width:200px;height:200px}
+
+/* Better card depth */
+.ind-nav-item:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.portal-card:hover{box-shadow:0 16px 48px rgba(200,169,110,.1),0 0 20px rgba(198,40,40,.04)}
+
+/* Responsive polish */
+@media(max-width:768px){.section-divider{width:60px}}
+
+
+/* ═══════ Rich Visual Effects ═══════ */
+/* Gradient animated borders */
+@keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* Floating animation for cards */
+@keyframes subtleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* Glow pulse */
+@keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(200,169,110,.08)}50%{box-shadow:0 0 50px rgba(200,169,110,.18)}}
+
+/* Section enter animation */
+@keyframes slideUpFade{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* Button shimmer */
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.1) 50%,transparent 70%);background-size:200% 200%;animation:shimmer 3s infinite;pointer-events:none}
+
+/* Glass card enhanced hover */
+.glass-card{transition:all .45s var(--ease-out-expo),box-shadow .6s}
+.glass-card:hover{box-shadow:0 8px 40px rgba(200,169,110,.1),0 0 60px rgba(198,40,40,.04)}
+
+/* Portal cards */
+.portal-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(200,169,110,.12)}
+
+/* Stats glow */
+.stat-card:hover{box-shadow:0 0 30px rgba(200,169,110,.08)}
+
+/* Site cards in RedCulture */
+.site-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(198,40,40,.1)}
+
+/* Person cards */
+.person-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(200,169,110,.08)}
+
+/* Song rows */
+.song-row:hover{transform:translateX(6px);border-color:rgba(200,169,110,.2)}
+
+/* Industry navigation cards */
+.ind-nav-item{transition:all .4s var(--ease-spring)}
+.ind-nav-item:hover{transform:translateY(-3px) scale(1.02)}
+
+/* Back to top button */
+.back-to-top{transition:all .4s var(--ease-spring)}
+.back-to-top:hover{transform:scale(1.1);box-shadow:0 0 20px rgba(200,169,110,.2)}
+
+/* Smooth scroll reveal enhancement */
+.reveal{transition:opacity .8s var(--ease-out-expo),transform .8s var(--ease-out-expo)}
+
+/* Hero section particle overlay */
+.hero-glow{pointer-events:none;transition:opacity .3s}
+
+/* Subtle text gradient for headings */
+.section-title{background:linear-gradient(180deg,var(--text-primary),var(--text-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+[data-theme=light] .section-title,[data-theme=sunset] .section-title,[data-theme=lavender] .section-title{background:linear-gradient(180deg,var(--text-primary),var(--gold-primary));-webkit-background-clip:text}
+
+/* ═══════════════════════════════════════════════════════
+   VISUAL FX SUITE — 24 Professional Effects
+   ═══════════════════════════════════════════════════════ */
+
+/* ── 1. Animated Mesh Gradient Background ── */
+.mesh-bg{position:relative;overflow:hidden}
+.mesh-bg::before{content:'';position:absolute;inset:-50%;background:radial-gradient(ellipse 40% 50% at 20% 30%,rgba(198,40,40,.06) 0%,transparent 50%),radial-gradient(ellipse 30% 40% at 80% 20%,rgba(200,169,110,.04) 0%,transparent 50%),radial-gradient(ellipse 35% 45% at 60% 80%,rgba(66,165,245,.03) 0%,transparent 50%);animation:meshMorph 15s ease-in-out infinite alternate;pointer-events:none;z-index:0}
+@keyframes meshMorph{0%{transform:translate(0,0) rotate(0deg) scale(1)}33%{transform:translate(2%,-1%) rotate(1deg) scale(1.05)}66%{transform:translate(-1%,2%) rotate(-1deg) scale(.97)}100%{transform:translate(1%,1%) rotate(.5deg) scale(1.02)}}
+
+/* ── 2. 3D Card Tilt ── */
+.tilt-card{transition:transform .3s ease-out,box-shadow .4s;transform-style:preserve-3d;perspective:1000px}
+.tilt-card:hover{box-shadow:0 25px 50px -12px rgba(0,0,0,.5),0 0 30px rgba(200,169,110,.1)}
+
+/* ── 3. Neon Border Glow ── */
+@keyframes neonPulse{0%,100%{box-shadow:0 0 5px rgba(200,169,110,.3),0 0 20px rgba(200,169,110,.1),inset 0 0 5px rgba(200,169,110,.1)}50%{box-shadow:0 0 15px rgba(200,169,110,.5),0 0 40px rgba(200,169,110,.2),inset 0 0 10px rgba(200,169,110,.15)}}
+.neon-border{animation:neonPulse 3s ease-in-out infinite;border:1px solid rgba(200,169,110,.2)}
+
+/* ── 4. Ripple Click ── */
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+.ripple{position:relative;overflow:hidden}
+.ripple-effect{position:absolute;border-radius:50%;background:rgba(255,255,255,.2);transform:scale(0);animation:ripple .6s linear;pointer-events:none}
+
+/* ── 5. Magnetic Hover ── */
+.magnetic{transition:transform .3s cubic-bezier(.25,.46,.45,.94)}
+
+/* ── 6. Text Shimmer ── */
+@keyframes textShimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.text-shimmer{background:linear-gradient(90deg,var(--gold-primary),var(--red-primary),var(--accent-blue),var(--gold-primary));background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:textShimmer 4s ease infinite}
+
+/* ── 7. Floating Orbs ── */
+@keyframes orb1{0%,100%{translate:0 0;scale:1}25%{translate:30px -20px;scale:1.1}50%{translate:-10px 20px;scale:.9}75%{translate:-20px -10px;scale:1.05}}
+@keyframes orb2{0%,100%{translate:0 0;scale:1}25%{translate:-20px 15px;scale:.9}50%{translate:15px -25px;scale:1.08}75%{translate:10px 10px;scale:.95}}
+@keyframes orb3{0%,100%{translate:0 0;scale:1}25%{translate:25px 10px;scale:1.05}50%{translate:-20px -15px;scale:.92}75%{translate:5px 20px;scale:1.1}}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.08}
+.orb-1{width:400px;height:400px;background:var(--red-primary);animation:orb1 12s ease-in-out infinite}
+.orb-2{width:300px;height:300px;background:var(--gold-primary);animation:orb2 15s ease-in-out infinite}
+.orb-3{width:350px;height:350px;background:var(--accent-blue);animation:orb3 18s ease-in-out infinite}
+
+/* ── 8. Stagger Reveal ── */
+.stagger>*:nth-child(1){transition-delay:0s}.stagger>*:nth-child(2){transition-delay:.1s}.stagger>*:nth-child(3){transition-delay:.2s}.stagger>*:nth-child(4){transition-delay:.3s}.stagger>*:nth-child(5){transition-delay:.4s}.stagger>*:nth-child(6){transition-delay:.5s}.stagger>*:nth-child(7){transition-delay:.6s}.stagger>*:nth-child(8){transition-delay:.7s}.stagger>*:nth-child(9){transition-delay:.8s}.stagger>*:nth-child(10){transition-delay:.9s}
+
+/* ── 9. Glitch Text ── */
+@keyframes glitch1{0%,100%{transform:none;opacity:1}7%{transform:skew(-.5deg,1deg)}10%{transform:none}27%{transform:none}30%{transform:skew(.8deg,1deg)}35%{transform:none}52%{transform:none}55%{transform:skew(-1deg,.5deg)}50%{transform:none}72%{transform:none}75%{transform:skew(.4deg,-.5deg)}80%{transform:none}100%{transform:none}}
+@keyframes glitch2{0%,100%{transform:none;opacity:.25}7%{transform:translate(-3px,2px)}10%{transform:none}27%{transform:none}30%{transform:translate(3px,-2px)}35%{transform:none}}
+.glitch{position:relative}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%}
+.glitch::before{color:var(--red-primary);animation:glitch2 3s infinite alternate-reverse;z-index:-1}
+.glitch::after{color:var(--accent-blue);animation:glitch1 2.5s infinite alternate-reverse;z-index:-2}
+
+/* ── 10. Spotlight Hover ── */
+.spotlight{position:relative;overflow:hidden}
+.spotlight::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx) var(--my),rgba(255,255,255,.06) 0%,transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:1}
+.spotlight:hover::after{opacity:1}
+
+/* ── 11. Image Scale Reveal ── */
+.img-reveal{overflow:hidden}
+.img-reveal img{transition:transform .6s cubic-bezier(.25,.46,.45,.94),filter .6s}
+.img-reveal:hover img{transform:scale(1.08);filter:brightness(1.1)}
+
+/* ── 12. Border Draw ── */
+@keyframes borderDraw{0%{stroke-dashoffset:1000}100%{stroke-dashoffset:0}}
+
+/* ── 13. Count Pulse ── */
+@keyframes countPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.count-up{animation:countPulse 2s ease-in-out infinite}
+
+/* ── 14. Shimmer Overlay ── */
+@keyframes shimmerOverlay{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.shimmer-overlay{position:relative;overflow:hidden}
+.shimmer-overlay::after{content:'';position:absolute;top:0;left:0;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);animation:shimmerOverlay 2.5s infinite;pointer-events:none}
+
+/* ── 15. Morphing Divider ── */
+@keyframes morphDiv{0%,100%{width:60px;opacity:.6}50%{width:120px;opacity:1}}
+.section-divider{animation:morphDiv 4s ease-in-out infinite}
+
+/* ── 16. Bounce Entry ── */
+@keyframes bounceIn{0%{opacity:0;transform:scale(.3)}50%{opacity:1;transform:scale(1.05)}70%{transform:scale(.9)}100%{transform:scale(1)}}
+.bounce-in{animation:bounceIn .6s var(--ease-spring)}
+
+/* ── 17. Rotating Border ── */
+@keyframes rotateBorder{100%{transform:rotate(360deg)}}
+.rotate-border{position:relative}
+.rotate-border::before{content:'';position:absolute;inset:-2px;background:conic-gradient(from 0deg,transparent,var(--gold-primary),transparent,var(--red-primary));animation:rotateBorder 3s linear infinite;z-index:-1;border-radius:inherit;opacity:.5}
+
+/* ── 18. Selection Color ── */
+::selection{background:rgba(200,169,110,.3);color:#fff}
+
+/* ── 19. Section Divider Line ── */
+.section-alt{position:relative}
+.section-alt::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,169,110,.15),transparent)}
+
+/* ── 20. Image hover lift ── */
+.img-lift{transition:transform .5s var(--ease-out-expo),box-shadow .5s}
+.img-lift:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+
+/* ── 21. Fade in stagger ── */
+@keyframes fadeStagger{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-stagger>*{opacity:0;animation:fadeStagger .6s var(--ease-out-expo) forwards}
+.fade-stagger>*:nth-child(1){animation-delay:.05s}.fade-stagger>*:nth-child(2){animation-delay:.1s}.fade-stagger>*:nth-child(3){animation-delay:.15s}.fade-stagger>*:nth-child(4){animation-delay:.2s}.fade-stagger>*:nth-child(5){animation-delay:.25s}.fade-stagger>*:nth-child(6){animation-delay:.3s}
+
+/* ── 22. Pulse dot ── */
+@keyframes pulseDot{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.8)}}
+.pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--red-primary);display:inline-block;animation:pulseDot 2s ease-in-out infinite}
+
+/* ── Light theme fixes ── */
+[data-theme=light] .rotate-border::before,[data-theme=sunset] .rotate-border::before,[data-theme=lavender] .rotate-border::before{opacity:.3}
+
+/* ═══════════════════════════════════════════════════════
+   VISUAL FX SUITE — 24 Professional Effects
+   ═══════════════════════════════════════════════════════ */
+
+/* ── 1. Animated Mesh Gradient Background ── */
+.mesh-bg{position:relative;overflow:hidden}
+.mesh-bg::before{content:'';position:absolute;inset:-50%;background:radial-gradient(ellipse 40% 50% at 20% 30%,rgba(198,40,40,.06) 0%,transparent 50%),radial-gradient(ellipse 30% 40% at 80% 20%,rgba(200,169,110,.04) 0%,transparent 50%),radial-gradient(ellipse 35% 45% at 60% 80%,rgba(66,165,245,.03) 0%,transparent 50%);animation:meshMorph 15s ease-in-out infinite alternate;pointer-events:none;z-index:0}
+@keyframes meshMorph{0%{transform:translate(0,0) rotate(0deg) scale(1)}33%{transform:translate(2%,-1%) rotate(1deg) scale(1.05)}66%{transform:translate(-1%,2%) rotate(-1deg) scale(.97)}100%{transform:translate(1%,1%) rotate(.5deg) scale(1.02)}}
+
+/* ── 2. 3D Card Tilt ── */
+.tilt-card{transition:transform .3s ease-out,box-shadow .4s;transform-style:preserve-3d;perspective:1000px}
+.tilt-card:hover{box-shadow:0 25px 50px -12px rgba(0,0,0,.5),0 0 30px rgba(200,169,110,.1)}
+
+/* ── 3. Neon Border Glow ── */
+@keyframes neonPulse{0%,100%{box-shadow:0 0 5px rgba(200,169,110,.3),0 0 20px rgba(200,169,110,.1),inset 0 0 5px rgba(200,169,110,.1)}50%{box-shadow:0 0 15px rgba(200,169,110,.5),0 0 40px rgba(200,169,110,.2),inset 0 0 10px rgba(200,169,110,.15)}}
+.neon-border{animation:neonPulse 3s ease-in-out infinite;border:1px solid rgba(200,169,110,.2)}
+
+/* ── 4. Ripple Click ── */
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+.ripple{position:relative;overflow:hidden}
+.ripple-effect{position:absolute;border-radius:50%;background:rgba(255,255,255,.2);transform:scale(0);animation:ripple .6s linear;pointer-events:none}
+
+/* ── 5. Magnetic Hover ── */
+.magnetic{transition:transform .3s cubic-bezier(.25,.46,.45,.94)}
+
+/* ── 6. Text Shimmer ── */
+@keyframes textShimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.text-shimmer{background:linear-gradient(90deg,var(--gold-primary),var(--red-primary),var(--accent-blue),var(--gold-primary));background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:textShimmer 4s ease infinite}
+
+/* ── 7. Floating Orbs ── */
+@keyframes orb1{0%,100%{translate:0 0;scale:1}25%{translate:30px -20px;scale:1.1}50%{translate:-10px 20px;scale:.9}75%{translate:-20px -10px;scale:1.05}}
+@keyframes orb2{0%,100%{translate:0 0;scale:1}25%{translate:-20px 15px;scale:.9}50%{translate:15px -25px;scale:1.08}75%{translate:10px 10px;scale:.95}}
+@keyframes orb3{0%,100%{translate:0 0;scale:1}25%{translate:25px 10px;scale:1.05}50%{translate:-20px -15px;scale:.92}75%{translate:5px 20px;scale:1.1}}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.08}
+.orb-1{width:400px;height:400px;background:var(--red-primary);animation:orb1 12s ease-in-out infinite}
+.orb-2{width:300px;height:300px;background:var(--gold-primary);animation:orb2 15s ease-in-out infinite}
+.orb-3{width:350px;height:350px;background:var(--accent-blue);animation:orb3 18s ease-in-out infinite}
+
+/* ── 8. Stagger Reveal ── */
+.stagger>*:nth-child(1){transition-delay:0s}.stagger>*:nth-child(2){transition-delay:.1s}.stagger>*:nth-child(3){transition-delay:.2s}.stagger>*:nth-child(4){transition-delay:.3s}.stagger>*:nth-child(5){transition-delay:.4s}.stagger>*:nth-child(6){transition-delay:.5s}.stagger>*:nth-child(7){transition-delay:.6s}.stagger>*:nth-child(8){transition-delay:.7s}.stagger>*:nth-child(9){transition-delay:.8s}.stagger>*:nth-child(10){transition-delay:.9s}
+
+/* ── 9. Glitch Text ── */
+@keyframes glitch1{0%,100%{transform:none;opacity:1}7%{transform:skew(-.5deg,1deg)}10%{transform:none}27%{transform:none}30%{transform:skew(.8deg,1deg)}35%{transform:none}52%{transform:none}55%{transform:skew(-1deg,.5deg)}50%{transform:none}72%{transform:none}75%{transform:skew(.4deg,-.5deg)}80%{transform:none}100%{transform:none}}
+@keyframes glitch2{0%,100%{transform:none;opacity:.25}7%{transform:translate(-3px,2px)}10%{transform:none}27%{transform:none}30%{transform:translate(3px,-2px)}35%{transform:none}}
+.glitch{position:relative}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%}
+.glitch::before{color:var(--red-primary);animation:glitch2 3s infinite alternate-reverse;z-index:-1}
+.glitch::after{color:var(--accent-blue);animation:glitch1 2.5s infinite alternate-reverse;z-index:-2}
+
+/* ── 10. Spotlight Hover ── */
+.spotlight{position:relative;overflow:hidden}
+.spotlight::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx) var(--my),rgba(255,255,255,.06) 0%,transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:1}
+.spotlight:hover::after{opacity:1}
+
+/* ── 11. Image Scale Reveal ── */
+.img-reveal{overflow:hidden}
+.img-reveal img{transition:transform .6s cubic-bezier(.25,.46,.45,.94),filter .6s}
+.img-reveal:hover img{transform:scale(1.08);filter:brightness(1.1)}
+
+/* ── 12. Border Draw ── */
+@keyframes borderDraw{0%{stroke-dashoffset:1000}100%{stroke-dashoffset:0}}
+
+/* ── 13. Count Pulse ── */
+@keyframes countPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.count-up{animation:countPulse 2s ease-in-out infinite}
+
+/* ── 14. Shimmer Overlay ── */
+@keyframes shimmerOverlay{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.shimmer-overlay{position:relative;overflow:hidden}
+.shimmer-overlay::after{content:'';position:absolute;top:0;left:0;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);animation:shimmerOverlay 2.5s infinite;pointer-events:none}
+
+/* ── 15. Morphing Divider ── */
+@keyframes morphDiv{0%,100%{width:60px;opacity:.6}50%{width:120px;opacity:1}}
+.section-divider{animation:morphDiv 4s ease-in-out infinite}
+
+/* ── 16. Bounce Entry ── */
+@keyframes bounceIn{0%{opacity:0;transform:scale(.3)}50%{opacity:1;transform:scale(1.05)}70%{transform:scale(.9)}100%{transform:scale(1)}}
+.bounce-in{animation:bounceIn .6s var(--ease-spring)}
+
+/* ── 17. Rotating Border ── */
+@keyframes rotateBorder{100%{transform:rotate(360deg)}}
+.rotate-border{position:relative}
+.rotate-border::before{content:'';position:absolute;inset:-2px;background:conic-gradient(from 0deg,transparent,var(--gold-primary),transparent,var(--red-primary));animation:rotateBorder 3s linear infinite;z-index:-1;border-radius:inherit;opacity:.5}
+
+/* ── 18. Selection Color ── */
+::selection{background:rgba(200,169,110,.3);color:#fff}
+
+/* ── 19. Section Divider Line ── */
+.section-alt{position:relative}
+.section-alt::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,169,110,.15),transparent)}
+
+/* ── 20. Image hover lift ── */
+.img-lift{transition:transform .5s var(--ease-out-expo),box-shadow .5s}
+.img-lift:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+
+/* ── 21. Fade in stagger ── */
+@keyframes fadeStagger{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-stagger>*{opacity:0;animation:fadeStagger .6s var(--ease-out-expo) forwards}
+.fade-stagger>*:nth-child(1){animation-delay:.05s}.fade-stagger>*:nth-child(2){animation-delay:.1s}.fade-stagger>*:nth-child(3){animation-delay:.15s}.fade-stagger>*:nth-child(4){animation-delay:.2s}.fade-stagger>*:nth-child(5){animation-delay:.25s}.fade-stagger>*:nth-child(6){animation-delay:.3s}
+
+/* ── 22. Pulse dot ── */
+@keyframes pulseDot{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.8)}}
+.pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--red-primary);display:inline-block;animation:pulseDot 2s ease-in-out infinite}
+
+/* ── Light theme fixes ── */
+[data-theme=light] .rotate-border::before,[data-theme=sunset] .rotate-border::before,[data-theme=lavender] .rotate-border::before{opacity:.3}
+
+/* ═══════════════════════════════════════════════════════
+   DRAMATIC VISUAL EFFECTS — Bold & Unmissable
+   ═══════════════════════════════════════════════════════ */
+
+/* ── HERO: Animated Aurora Background ── */
+@keyframes aurora{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.aurora-bg{background:linear-gradient(135deg,rgba(127,0,0,.08),rgba(200,169,110,.06),rgba(66,165,245,.04),rgba(127,0,0,.08));background-size:400% 400%;animation:aurora 8s ease infinite}
+
+/* ── BIG Floating Elements ── */
+@keyframes bigFloat{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-25px) rotate(3deg)}75%{transform:translateY(-15px) rotate(-2deg)}}
+.big-float{animation:bigFloat 6s ease-in-out infinite}
+
+/* ── Card Tilt 3D with Perspective ── */
+.tilt-3d{transform-style:preserve-3d;perspective:800px;transition:transform .2s ease-out}
+.tilt-3d>*{transform:translateZ(20px)}
+
+/* ── Scale-In On Scroll ── */
+@keyframes scaleReveal{from{opacity:0;transform:scale(.75) translateY(40px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.scale-reveal{animation:scaleReveal .8s var(--ease-out-expo) forwards;animation-timeline:view();animation-range:entry 0% cover 30%}
+
+/* ── Dramatic Button Pulse ── */
+@keyframes btnPulse{0%{box-shadow:0 0 0 0 rgba(198,40,40,.6)}70%{box-shadow:0 0 0 18px rgba(198,40,40,0)}100%{box-shadow:0 0 0 0 rgba(198,40,40,0)}}
+.btn-pulse{animation:btnPulse 2s infinite}
+
+/* ── Slide In From Sides ── */
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-80px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(80px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInUp{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:translateY(0)}}
+.slide-left{animation:slideInLeft .7s var(--ease-out-expo) forwards}
+.slide-right{animation:slideInRight .7s var(--ease-out-expo) forwards}
+.slide-up{animation:slideInUp .7s var(--ease-out-expo) forwards}
+
+/* ── Dramatic Hover Lift ── */
+.hover-lift{transition:all .4s cubic-bezier(.34,1.56,.64,1)}
+.hover-lift:hover{transform:translateY(-12px) scale(1.03);box-shadow:0 30px 60px rgba(0,0,0,.4),0 0 40px rgba(200,169,110,.15)}
+
+/* ── Gradient Border Animation ── */
+@keyframes gradBorder{0%{border-image:linear-gradient(0deg,var(--red-primary),var(--gold-primary),var(--accent-blue))1}50%{border-image:linear-gradient(180deg,var(--red-primary),var(--gold-primary),var(--accent-blue))1}100%{border-image:linear-gradient(360deg,var(--red-primary),var(--gold-primary),var(--accent-blue))1}}
+.grad-border{border:2px solid;border-image:linear-gradient(90deg,var(--red-primary),var(--gold-primary),var(--accent-blue),var(--red-primary))1;animation:gradBorder 4s linear infinite}
+
+/* ── TYPEWRITER Effect ── */
+@keyframes typewriter{from{width:0}to{width:100%}}
+.typewriter{overflow:hidden;white-space:nowrap;animation:typewriter 2s steps(40) forwards}
+.typewriter-cursor{border-right:2px solid var(--gold-primary);animation:blink .8s step-end infinite}
+@keyframes blink{50%{border-color:transparent}}
+
+/* ── BIG Number Counter ── */
+@keyframes countReveal{from{opacity:0;transform:translateY(30px) scale(.5)}to{opacity:1;transform:translateY(0) scale(1)}}
+.count-reveal{animation:countReveal .6s var(--ease-spring) forwards}
+
+/* ── Animated Underline Draw ── */
+@keyframes drawLine{from{width:0}to{width:100%}}
+.draw-line{position:relative}
+.draw-line::after{content:'';position:absolute;bottom:-4px;left:0;height:2px;background:var(--gold-primary);animation:drawLine .8s var(--ease-out-expo) forwards}
+
+/* ── Burst Entrance ── */
+@keyframes burst{0%{opacity:0;transform:scale(0);filter:blur(10px)}60%{opacity:1;transform:scale(1.1);filter:blur(0)}100%{transform:scale(1);filter:blur(0)}}
+.burst{animation:burst .7s var(--ease-spring) forwards}
+
+/* ── Wiggle on Hover ── */
+@keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+.wiggle:hover{animation:wiggle .5s ease-in-out}
+
+/* ── Fade from bottom ── */
+@keyframes fadeUp{from{opacity:0;filter:blur(10px);transform:translateY(50px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
+.fade-up{animation:fadeUp .8s var(--ease-out-expo) forwards}
+.fade-up-d1{animation-delay:.1s}.fade-up-d2{animation-delay:.2s}.fade-up-d3{animation-delay:.3s}.fade-up-d4{animation-delay:.4s}.fade-up-d5{animation-delay:.5s}
+
+/* ── Rotating Icon ── */
+.rotating-icon{display:inline-block;animation:rotateSlow 20s linear infinite}
+
+/* ── TV Static/Noise Effect ── */
+@keyframes noise{0%,100%{transform:translate(0,0)}10%{transform:translate(-2%,1%)}20%{transform:translate(3%,-1%)}30%{transform:translate(-1%,2%)}40%{transform:translate(2%,-2%)}50%{transform:translate(-3%,1%)}60%{transform:translate(1%,-3%)}70%{transform:translate(-1%,1%)}80%{transform:translate(2%,-1%)}90%{transform:translate(-2%,2%)}}
+
+/* ── Parallax Depth Layers ── */
+.parallax-deep{transform:translateZ(-100px) scale(1.5)}
+.parallax-mid{transform:translateZ(-50px) scale(1.25)}
+.parallax-front{transform:translateZ(0)}
+
+/* ── Reveal on scroll trigger area ── */
+.reveal-bold{opacity:0;transform:translateY(60px) scale(.9);transition:opacity .8s var(--ease-out-expo),transform .8s var(--ease-out-expo)}
+.reveal-bold.visible{opacity:1;transform:translateY(0) scale(1)}
+
+/* ═══════════════════════════════════════════════════════
+   DRAMATIC VISUAL EFFECTS — Bold & Unmissable
+   ═══════════════════════════════════════════════════════ */
+
+/* ── HERO: Animated Aurora Background ── */
+@keyframes aurora{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.aurora-bg{background:linear-gradient(135deg,rgba(127,0,0,.08),rgba(200,169,110,.06),rgba(66,165,245,.04),rgba(127,0,0,.08));background-size:400% 400%;animation:aurora 8s ease infinite}
+
+/* ── BIG Floating Elements ── */
+@keyframes bigFloat{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-25px) rotate(3deg)}75%{transform:translateY(-15px) rotate(-2deg)}}
+.big-float{animation:bigFloat 6s ease-in-out infinite}
+
+/* ── Card Tilt 3D with Perspective ── */
+.tilt-3d{transform-style:preserve-3d;perspective:800px;transition:transform .2s ease-out}
+.tilt-3d>*{transform:translateZ(20px)}
+
+/* ── Scale-In On Scroll ── */
+@keyframes scaleReveal{from{opacity:0;transform:scale(.75) translateY(40px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.scale-reveal{animation:scaleReveal .8s var(--ease-out-expo) forwards;animation-timeline:view();animation-range:entry 0% cover 30%}
+
+/* ── Dramatic Button Pulse ── */
+@keyframes btnPulse{0%{box-shadow:0 0 0 0 rgba(198,40,40,.6)}70%{box-shadow:0 0 0 18px rgba(198,40,40,0)}100%{box-shadow:0 0 0 0 rgba(198,40,40,0)}}
+.btn-pulse{animation:btnPulse 2s infinite}
+
+/* ── Slide In From Sides ── */
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-80px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(80px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInUp{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:translateY(0)}}
+.slide-left{animation:slideInLeft .7s var(--ease-out-expo) forwards}
+.slide-right{animation:slideInRight .7s var(--ease-out-expo) forwards}
+.slide-up{animation:slideInUp .7s var(--ease-out-expo) forwards}
+
+/* ── Dramatic Hover Lift ── */
+.hover-lift{transition:all .4s cubic-bezier(.34,1.56,.64,1)}
+.hover-lift:hover{transform:translateY(-12px) scale(1.03);box-shadow:0 30px 60px rgba(0,0,0,.4),0 0 40px rgba(200,169,110,.15)}
+
+/* ── Gradient Border Animation ── */
+@keyframes gradBorder{0%{border-image:linear-gradient(0deg,var(--red-primary),var(--gold-primary),var(--accent-blue))1}50%{border-image:linear-gradient(180deg,var(--red-primary),var(--gold-primary),var(--accent-blue))1}100%{border-image:linear-gradient(360deg,var(--red-primary),var(--gold-primary),var(--accent-blue))1}}
+.grad-border{border:2px solid;border-image:linear-gradient(90deg,var(--red-primary),var(--gold-primary),var(--accent-blue),var(--red-primary))1;animation:gradBorder 4s linear infinite}
+
+/* ── TYPEWRITER Effect ── */
+@keyframes typewriter{from{width:0}to{width:100%}}
+.typewriter{overflow:hidden;white-space:nowrap;animation:typewriter 2s steps(40) forwards}
+.typewriter-cursor{border-right:2px solid var(--gold-primary);animation:blink .8s step-end infinite}
+@keyframes blink{50%{border-color:transparent}}
+
+/* ── BIG Number Counter ── */
+@keyframes countReveal{from{opacity:0;transform:translateY(30px) scale(.5)}to{opacity:1;transform:translateY(0) scale(1)}}
+.count-reveal{animation:countReveal .6s var(--ease-spring) forwards}
+
+/* ── Animated Underline Draw ── */
+@keyframes drawLine{from{width:0}to{width:100%}}
+.draw-line{position:relative}
+.draw-line::after{content:'';position:absolute;bottom:-4px;left:0;height:2px;background:var(--gold-primary);animation:drawLine .8s var(--ease-out-expo) forwards}
+
+/* ── Burst Entrance ── */
+@keyframes burst{0%{opacity:0;transform:scale(0);filter:blur(10px)}60%{opacity:1;transform:scale(1.1);filter:blur(0)}100%{transform:scale(1);filter:blur(0)}}
+.burst{animation:burst .7s var(--ease-spring) forwards}
+
+/* ── Wiggle on Hover ── */
+@keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+.wiggle:hover{animation:wiggle .5s ease-in-out}
+
+/* ── Fade from bottom ── */
+@keyframes fadeUp{from{opacity:0;filter:blur(10px);transform:translateY(50px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
+.fade-up{animation:fadeUp .8s var(--ease-out-expo) forwards}
+.fade-up-d1{animation-delay:.1s}.fade-up-d2{animation-delay:.2s}.fade-up-d3{animation-delay:.3s}.fade-up-d4{animation-delay:.4s}.fade-up-d5{animation-delay:.5s}
+
+/* ── Rotating Icon ── */
+.rotating-icon{display:inline-block;animation:rotateSlow 20s linear infinite}
+
+/* ── TV Static/Noise Effect ── */
+@keyframes noise{0%,100%{transform:translate(0,0)}10%{transform:translate(-2%,1%)}20%{transform:translate(3%,-1%)}30%{transform:translate(-1%,2%)}40%{transform:translate(2%,-2%)}50%{transform:translate(-3%,1%)}60%{transform:translate(1%,-3%)}70%{transform:translate(-1%,1%)}80%{transform:translate(2%,-1%)}90%{transform:translate(-2%,2%)}}
+
+/* ── Parallax Depth Layers ── */
+.parallax-deep{transform:translateZ(-100px) scale(1.5)}
+.parallax-mid{transform:translateZ(-50px) scale(1.25)}
+.parallax-front{transform:translateZ(0)}
+
+/* ── Reveal on scroll trigger area ── */
+.reveal-bold{opacity:0;transform:translateY(60px) scale(.9);transition:opacity .8s var(--ease-out-expo),transform .8s var(--ease-out-expo)}
+.reveal-bold.visible{opacity:1;transform:translateY(0) scale(1)}
+/* ═══════════════════════════════════════════════════════
+   GAME-STYLE DRAMATIC EFFECTS — Bold, Unmissable, Premium
+   ═══════════════════════════════════════════════════════ */
+
+/* ── LOADING: Full-screen loading overlay ── */
+@keyframes loadFadeOut{0%{opacity:1}80%{opacity:1}100%{opacity:0;visibility:hidden}}
+@keyframes loadBar{from{width:0}to{width:100%}}
+@keyframes loadPulse{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes loadSpin{100%{transform:rotate(360deg)}}
+.page-loader{position:fixed;inset:0;z-index:99999;background:var(--bg-primary);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;animation:loadFadeOut 2.5s ease forwards;pointer-events:none}
+.page-loader .loader-icon{font-size:3rem;animation:loadPulse 1s ease-in-out infinite,loadSpin 3s linear infinite}
+.page-loader .loader-bar{width:200px;height:3px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden}
+.page-loader .loader-bar::after{content:'';display:block;height:100%;background:linear-gradient(90deg,var(--red-primary),var(--gold-primary));border-radius:3px;animation:loadBar 2s ease-out forwards}
+
+/* ── ACHIEVEMENT UNLOCK Popup ── */
+@keyframes achievePop{0%{opacity:0;transform:scale(.3) rotate(-10deg)}60%{opacity:1;transform:scale(1.15) rotate(3deg)}80%{transform:scale(.95) rotate(-1deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes achieveGlow{0%,100%{box-shadow:0 0 20px rgba(200,169,110,.3),0 0 60px rgba(200,169,110,.1)}50%{box-shadow:0 0 40px rgba(200,169,110,.6),0 0 100px rgba(200,169,110,.2)}}
+.achieve-pop{animation:achievePop .8s var(--ease-spring) forwards}
+.achieve-glow{animation:achieveGlow 2s ease-in-out infinite}
+
+/* ── SECTION REVEAL: Dramatic scale + blur + glow ── */
+@keyframes sectionReveal{0%{opacity:0;transform:scale(.85) translateY(60px);filter:blur(15px)}60%{opacity:1;filter:blur(0)}100%{transform:scale(1) translateY(0);filter:blur(0)}}
+.reveal-section{animation:sectionReveal 1s var(--ease-out-expo) forwards;animation-timeline:view();animation-range:entry 0% cover 25%}
+
+/* ── HERO: Spotlight sweep ── */
+@keyframes heroSweep{0%{left:-100%}100%{left:200%}}
+.hero-sweep{position:relative;overflow:hidden}
+.hero-sweep::after{content:'';position:absolute;top:-50%;left:-100%;width:60%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent);transform:skewX(-20deg);animation:heroSweep 4s ease-in-out infinite}
+
+/* ── STARFIELD: Pure CSS starfield background ── */
+@keyframes starMove{from{transform:translateY(0)}to{transform:translateY(-100vh)}}
+.starfield{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.starfield::before,.starfield::after{content:'';position:absolute;width:2px;height:2px;border-radius:50%;box-shadow:200px 50px #fff,400px 150px rgba(200,169,110,.6),600px 80px #fff,800px 200px rgba(200,169,110,.4),100px 300px #fff,300px 400px rgba(200,169,110,.7),500px 350px #fff,700px 450px rgba(200,169,110,.5),900px 250px #fff,150px 500px rgba(200,169,110,.3),350px 550px #fff,550px 480px rgba(200,169,110,.6),750px 600px #fff,950px 350px rgba(200,169,110,.4),50px 650px #fff;animation:starMove 60s linear infinite}
+.starfield::after{animation-delay:-30s;box-shadow:250px 100px rgba(200,169,110,.5),450px 200px #fff,650px 120px rgba(200,169,110,.7),850px 280px #fff,150px 380px rgba(200,169,110,.4),350px 480px #fff,550px 420px rgba(200,169,110,.6),750px 520px #fff,950px 180px rgba(200,169,110,.3),50px 580px #fff,250px 650px rgba(200,169,110,.5),450px 550px #fff,650px 680px rgba(200,169,110,.4),850px 600px #fff}
+
+/* ── CARD: Hover burst glow ── */
+@keyframes burstGlow{0%{box-shadow:0 0 0 0 rgba(200,169,110,.5)}100%{box-shadow:0 0 0 30px rgba(200,169,110,0)}}
+.burst-glow{transition:all .3s}
+.burst-glow:hover{animation:burstGlow .8s ease-out}
+
+/* ── NUMBER: Dramatic count-up reveal ── */
+@keyframes countUp{0%{opacity:0;transform:translateY(40px) scale(.3);color:var(--red-primary)}50%{opacity:1;color:var(--gold-primary)}100%{transform:translateY(0) scale(1);color:var(--text-primary)}}
+.num-reveal{animation:countUp .8s var(--ease-spring) forwards;animation-timeline:view();animation-range:entry 0% cover 40%}
+
+/* ── FLOATING CARDS: Deep parallax drift ── */
+@keyframes deepDrift{0%,100%{transform:translate(0,0) rotateY(0)}25%{transform:translate(15px,-20px) rotateY(5deg)}50%{transform:translate(-10px,-5px) rotateY(-3deg)}75%{transform:translate(-15px,-15px) rotateY(2deg)}}
+.deep-drift{animation:deepDrift 8s ease-in-out infinite;transform-style:preserve-3d;perspective:1000px}
+
+/* ── BUTTON: Destructive scale pulse ── */
+@keyframes scalePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.scale-pulse{animation:scalePulse 2.5s ease-in-out infinite}
+
+/* ── BORDER: Electric arc animation ── */
+@keyframes electricArc{0%{background-position:0% 0%}50%{background-position:100% 100%}100%{background-position:0% 0%}}
+.electric-border{position:relative;border:1px solid transparent}
+.electric-border::before{content:'';position:absolute;inset:-1px;border-radius:inherit;background:linear-gradient(45deg,var(--red-primary),var(--gold-primary),var(--accent-blue),var(--red-primary),var(--gold-primary));background-size:400% 400%;animation:electricArc 3s linear infinite;z-index:-1;opacity:.4}
+
+/* ── FROSTED GLASS: Heavy blur on scroll ── */
+@keyframes frostIn{from{backdrop-filter:blur(0px);background:rgba(20,20,20,.3)}to{backdrop-filter:blur(30px);background:rgba(20,20,20,.75)}}
+.frost-in{animation:frostIn 1.5s ease forwards;animation-timeline:view();animation-range:entry 0% cover 40%}
+
+/* ── RADIAL REVEAL: Circle expand reveal ── */
+@keyframes radialReveal{0%{clip-path:circle(0% at 50% 50%)}100%{clip-path:circle(100% at 50% 50%)}}
+.radial-reveal{animation:radialReveal 1s var(--ease-out-expo) forwards;animation-timeline:view();animation-range:entry 0% cover 30%}
+
+/* ── FLOATING PARTICLES around elements ── */
+@keyframes floatParticle{0%,100%{transform:translate(0,0) scale(1);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translate(var(--fx),var(--fy)) scale(0);opacity:0}}
+.float-particle{position:relative}
+.float-particle::before{content:'';position:absolute;width:6px;height:6px;background:var(--gold-primary);border-radius:50%;animation:floatParticle 3s ease-in-out infinite;--fx:30px;--fy:-40px;top:50%;left:50%}
+.float-particle::after{content:'';position:absolute;width:4px;height:4px;background:var(--red-primary);border-radius:50%;animation:floatParticle 3.5s ease-in-out infinite .5s;--fx:-25px;--fy:-35px;top:50%;left:50%}
+
+/* ── TEXT: Glow flicker ── */
+@keyframes glowFlicker{0%,100%{text-shadow:0 0 10px rgba(200,169,110,.3)}25%{text-shadow:0 0 30px rgba(200,169,110,.6),0 0 60px rgba(200,169,110,.2)}50%{text-shadow:0 0 10px rgba(200,169,110,.2)}75%{text-shadow:0 0 40px rgba(200,169,110,.5),0 0 80px rgba(200,169,110,.15)}}
+.glow-text{animation:glowFlicker 3s ease-in-out infinite}
+
+/* ── PROGRESS: Level-up bar Style ── */
+@keyframes lvlUp{0%{width:0;background:var(--red-primary)}50%{background:var(--gold-primary)}100%{width:100%;background:var(--accent-green)}}
+.level-bar{height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.level-bar::after{content:'';display:block;height:100%;border-radius:2px;animation:lvlUp 2s var(--ease-out-expo) forwards;animation-timeline:view();animation-range:entry 0% cover 50%}
+
+/* ── SHAKE: Screen shake effect ── */
+@keyframes screenShake{0%,100%{transform:translate(0)}10%{transform:translate(-4px,2px)}20%{transform:translate(4px,-1px)}30%{transform:translate(-3px,-2px)}40%{transform:translate(3px,2px)}50%{transform:translate(-2px,-1px)}60%{transform:translate(2px,1px)}70%{transform:translate(-1px,-1px)}80%{transform:translate(1px,1px)}}
+.screen-shake{animation:screenShake .5s ease-out}
+
+/* ── CARD: Flip reveal ── */
+@keyframes flipReveal{0%{transform:perspective(800px) rotateY(90deg);opacity:0}100%{transform:perspective(800px) rotateY(0);opacity:1}}
+.flip-reveal{animation:flipReveal .7s var(--ease-out-expo) forwards;animation-timeline:view();animation-range:entry 0% cover 35%}
+
+/* ── HERO: Dust particles overlay ── */
+@keyframes dust1{0%,100%{transform:translate(0,0) scale(1);opacity:0}50%{opacity:1}}@keyframes dust2{0%,100%{transform:translate(0,0);opacity:0}50%{opacity:1}}
+@keyframes dust3{0%,100%{transform:translate(0,0) scale(1);opacity:0}50%{opacity:1}}
+
+/* ── Global cursor trail intensity boost ── */
+@media(prefers-reduced-motion:no-preference){*{scroll-behavior:smooth}}
+
+/* ── Fix: RedCulture hero title centering ── */
+.hero-red .hero-title{width:100%;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero-red .hero-title .typewriter-wrap{text-align:center}
+
+/* ── Interactive: hover scale on everything clickable ── */
+a,button,[role=button],.cursor-pointer{cursor:pointer;transition:transform .2s var(--ease-spring)}
+a:active,button:active{transform:scale(.96)}
+/* ═══════════════════════════════════════════════════════
+   GAME-STYLE DRAMATIC EFFECTS — Bold, Unmissable, Premium
+   ═══════════════════════════════════════════════════════ */
+
+/* ── LOADING: Full-screen loading overlay ── */
+@keyframes loadFadeOut{0%{opacity:1}80%{opacity:1}100%{opacity:0;visibility:hidden}}
+@keyframes loadBar{from{width:0}to{width:100%}}
+@keyframes loadPulse{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes loadSpin{100%{transform:rotate(360deg)}}
+.page-loader{position:fixed;inset:0;z-index:99999;background:var(--bg-primary);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;animation:loadFadeOut 2.5s ease forwards;pointer-events:none}
+.page-loader .loader-icon{font-size:3rem;animation:loadPulse 1s ease-in-out infinite,loadSpin 3s linear infinite}
+.page-loader .loader-bar{width:200px;height:3px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden}
+.page-loader .loader-bar::after{content:'';display:block;height:100%;background:linear-gradient(90deg,var(--red-primary),var(--gold-primary));border-radius:3px;animation:loadBar 2s ease-out forwards}
+
+/* ── ACHIEVEMENT UNLOCK Popup ── */
+@keyframes achievePop{0%{opacity:0;transform:scale(.3) rotate(-10deg)}60%{opacity:1;transform:scale(1.15) rotate(3deg)}80%{transform:scale(.95) rotate(-1deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes achieveGlow{0%,100%{box-shadow:0 0 20px rgba(200,169,110,.3),0 0 60px rgba(200,169,110,.1)}50%{box-shadow:0 0 40px rgba(200,169,110,.6),0 0 100px rgba(200,169,110,.2)}}
+.achieve-pop{animation:achievePop .8s var(--ease-spring) forwards}
+.achieve-glow{animation:achieveGlow 2s ease-in-out infinite}
+
+/* ── SECTION REVEAL: Dramatic scale + blur + glow ── */
+@keyframes sectionReveal{0%{opacity:0;transform:scale(.85) translateY(60px);filter:blur(15px)}60%{opacity:1;filter:blur(0)}100%{transform:scale(1) translateY(0);filter:blur(0)}}
+.reveal-section{animation:sectionReveal 1s var(--ease-out-expo) forwards;animation-timeline:view();animation-range:entry 0% cover 25%}
+
+/* ── HERO: Spotlight sweep ── */
+@keyframes heroSweep{0%{left:-100%}100%{left:200%}}
+.hero-sweep{position:relative;overflow:hidden}
+.hero-sweep::after{content:'';position:absolute;top:-50%;left:-100%;width:60%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent);transform:skewX(-20deg);animation:heroSweep 4s ease-in-out infinite}
+
+/* ── STARFIELD: Pure CSS starfield background ── */
+@keyframes starMove{from{transform:translateY(0)}to{transform:translateY(-100vh)}}
+.starfield{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.starfield::before,.starfield::after{content:'';position:absolute;width:2px;height:2px;border-radius:50%;box-shadow:200px 50px #fff,400px 150px rgba(200,169,110,.6),600px 80px #fff,800px 200px rgba(200,169,110,.4),100px 300px #fff,300px 400px rgba(200,169,110,.7),500px 350px #fff,700px 450px rgba(200,169,110,.5),900px 250px #fff,150px 500px rgba(200,169,110,.3),350px 550px #fff,550px 480px rgba(200,169,110,.6),750px 600px #fff,950px 350px rgba(200,169,110,.4),50px 650px #fff;animation:starMove 60s linear infinite}
+.starfield::after{animation-delay:-30s;box-shadow:250px 100px rgba(200,169,110,.5),450px 200px #fff,650px 120px rgba(200,169,110,.7),850px 280px #fff,150px 380px rgba(200,169,110,.4),350px 480px #fff,550px 420px rgba(200,169,110,.6),750px 520px #fff,950px 180px rgba(200,169,110,.3),50px 580px #fff,250px 650px rgba(200,169,110,.5),450px 550px #fff,650px 680px rgba(200,169,110,.4),850px 600px #fff}
+
+/* ── CARD: Hover burst glow ── */
+@keyframes burstGlow{0%{box-shadow:0 0 0 0 rgba(200,169,110,.5)}100%{box-shadow:0 0 0 30px rgba(200,169,110,0)}}
+.burst-glow{transition:all .3s}
+.burst-glow:hover{animation:burstGlow .8s ease-out}
+
+/* ── NUMBER: Dramatic count-up reveal ── */
+@keyframes countUp{0%{opacity:0;transform:translateY(40px) scale(.3);color:var(--red-primary)}50%{opacity:1;color:var(--gold-primary)}100%{transform:translateY(0) scale(1);color:var(--text-primary)}}
+.num-reveal{animation:countUp .8s var(--ease-spring) forwards;animation-timeline:view();animation-range:entry 0% cover 40%}
+
+/* ── FLOATING CARDS: Deep parallax drift ── */
+@keyframes deepDrift{0%,100%{transform:translate(0,0) rotateY(0)}25%{transform:translate(15px,-20px) rotateY(5deg)}50%{transform:translate(-10px,-5px) rotateY(-3deg)}75%{transform:translate(-15px,-15px) rotateY(2deg)}}
+.deep-drift{animation:deepDrift 8s ease-in-out infinite;transform-style:preserve-3d;perspective:1000px}
+
+/* ── BUTTON: Destructive scale pulse ── */
+@keyframes scalePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.scale-pulse{animation:scalePulse 2.5s ease-in-out infinite}
+
+/* ── BORDER: Electric arc animation ── */
+@keyframes electricArc{0%{background-position:0% 0%}50%{background-position:100% 100%}100%{background-position:0% 0%}}
+.electric-border{position:relative;border:1px solid transparent}
+.electric-border::before{content:'';position:absolute;inset:-1px;border-radius:inherit;background:linear-gradient(45deg,var(--red-primary),var(--gold-primary),var(--accent-blue),var(--red-primary),var(--gold-primary));background-size:400% 400%;animation:electricArc 3s linear infinite;z-index:-1;opacity:.4}
+
+/* ── FROSTED GLASS: Heavy blur on scroll ── */
+@keyframes frostIn{from{backdrop-filter:blur(0px);background:rgba(20,20,20,.3)}to{backdrop-filter:blur(30px);background:rgba(20,20,20,.75)}}
+.frost-in{animation:frostIn 1.5s ease forwards;animation-timeline:view();animation-range:entry 0% cover 40%}
+
+/* ── RADIAL REVEAL: Circle expand reveal ── */
+@keyframes radialReveal{0%{clip-path:circle(0% at 50% 50%)}100%{clip-path:circle(100% at 50% 50%)}}
+.radial-reveal{animation:radialReveal 1s var(--ease-out-expo) forwards;animation-timeline:view();animation-range:entry 0% cover 30%}
+
+/* ── FLOATING PARTICLES around elements ── */
+@keyframes floatParticle{0%,100%{transform:translate(0,0) scale(1);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translate(var(--fx),var(--fy)) scale(0);opacity:0}}
+.float-particle{position:relative}
+.float-particle::before{content:'';position:absolute;width:6px;height:6px;background:var(--gold-primary);border-radius:50%;animation:floatParticle 3s ease-in-out infinite;--fx:30px;--fy:-40px;top:50%;left:50%}
+.float-particle::after{content:'';position:absolute;width:4px;height:4px;background:var(--red-primary);border-radius:50%;animation:floatParticle 3.5s ease-in-out infinite .5s;--fx:-25px;--fy:-35px;top:50%;left:50%}
+
+/* ── TEXT: Glow flicker ── */
+@keyframes glowFlicker{0%,100%{text-shadow:0 0 10px rgba(200,169,110,.3)}25%{text-shadow:0 0 30px rgba(200,169,110,.6),0 0 60px rgba(200,169,110,.2)}50%{text-shadow:0 0 10px rgba(200,169,110,.2)}75%{text-shadow:0 0 40px rgba(200,169,110,.5),0 0 80px rgba(200,169,110,.15)}}
+.glow-text{animation:glowFlicker 3s ease-in-out infinite}
+
+/* ── PROGRESS: Level-up bar Style ── */
+@keyframes lvlUp{0%{width:0;background:var(--red-primary)}50%{background:var(--gold-primary)}100%{width:100%;background:var(--accent-green)}}
+.level-bar{height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.level-bar::after{content:'';display:block;height:100%;border-radius:2px;animation:lvlUp 2s var(--ease-out-expo) forwards;animation-timeline:view();animation-range:entry 0% cover 50%}
+
+/* ── SHAKE: Screen shake effect ── */
+@keyframes screenShake{0%,100%{transform:translate(0)}10%{transform:translate(-4px,2px)}20%{transform:translate(4px,-1px)}30%{transform:translate(-3px,-2px)}40%{transform:translate(3px,2px)}50%{transform:translate(-2px,-1px)}60%{transform:translate(2px,1px)}70%{transform:translate(-1px,-1px)}80%{transform:translate(1px,1px)}}
+.screen-shake{animation:screenShake .5s ease-out}
+
+/* ── CARD: Flip reveal ── */
+@keyframes flipReveal{0%{transform:perspective(800px) rotateY(90deg);opacity:0}100%{transform:perspective(800px) rotateY(0);opacity:1}}
+.flip-reveal{animation:flipReveal .7s var(--ease-out-expo) forwards;animation-timeline:view();animation-range:entry 0% cover 35%}
+
+/* ── HERO: Dust particles overlay ── */
+@keyframes dust1{0%,100%{transform:translate(0,0) scale(1);opacity:0}50%{opacity:1}}@keyframes dust2{0%,100%{transform:translate(0,0);opacity:0}50%{opacity:1}}
+@keyframes dust3{0%,100%{transform:translate(0,0) scale(1);opacity:0}50%{opacity:1}}
+
+/* ── Global cursor trail intensity boost ── */
+@media(prefers-reduced-motion:no-preference){*{scroll-behavior:smooth}}
+
+/* ── Fix: RedCulture hero title centering ── */
+.hero-red .hero-title{width:100%;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero-red .hero-title .typewriter-wrap{text-align:center}
+
+/* ── Interactive: hover scale on everything clickable ── */
+a,button,[role=button],.cursor-pointer{cursor:pointer;transition:transform .2s var(--ease-spring)}
+a:active,button:active{transform:scale(.96)}
+
+/* ═══════ AUTO-APPLY EFFECTS TO EXISTING ELEMENTS ═══════ */
+/* All glass cards get hover-lift automatically */
+.glass-card{transition:all .45s var(--ease-out-expo),box-shadow .6s,transform .4s cubic-bezier(.34,1.56,.64,1)}
+.glass-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 20px 60px rgba(200,169,110,.15),0 0 40px rgba(198,40,40,.06)}
+
+/* Primary buttons get pulse */
+.btn-primary{animation:btnPulse 2.5s infinite}
+@keyframes btnPulse{0%{box-shadow:0 0 0 0 rgba(198,40,40,.5)}70%{box-shadow:0 0 0 16px rgba(198,40,40,0)}100%{box-shadow:0 0 0 0 rgba(198,40,40,0)}}
+
+/* Section dividers get breathing */
+.section-divider{animation:morphDiv 4s ease-in-out infinite}
+
+/* Stats numbers get scale-pulse */
+.stat-num{animation:scalePulse 3s ease-in-out infinite}
+@keyframes scalePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+
+/* Portal cards get dramatic hover */
+.portal-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 30px 60px rgba(200,169,110,.15)}
+
+/* Site cards in RedCulture */
+.site-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(198,40,40,.15)}
+[data-theme=light] .site-card:hover{box-shadow:0 20px 40px rgba(198,40,40,.08)}
+
+/* Person cards */
+.person-card:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(200,169,110,.1)}
+
+/* Song rows */
+.song-row:hover{transform:translateX(8px);border-color:rgba(200,169,110,.3)}
+
+/* Industry nav items */
+.ind-nav-item:hover{transform:translateY(-5px) scale(1.03);box-shadow:0 12px 32px rgba(0,0,0,.3)}
+
+/* Member tags */
+.member-tag:hover{transform:translateY(-3px) scale(1.02)}
+
+/* Product images */
+.product-image img{transition:transform .6s var(--ease-out-expo)}
+.product-image:hover img{transform:scale(1.08)}
+
+/* Back to top */
+.back-to-top:hover{transform:scale(1.15);box-shadow:0 0 25px rgba(200,169,110,.25)}
+
+/* All images get subtle hover zoom */
+img{transition:transform .4s ease}
+a:hover img,.glass-card:hover img{transform:scale(1.04)}
+
+/* ═══════ Final Polish ═══════ */
+/* Richer section backgrounds */
+.about-hero{background:radial-gradient(ellipse 60% 40% at 50% 30%,rgba(200,169,110,.06) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 80% 70%,rgba(198,40,40,.04) 0%,transparent 50%),var(--bg-secondary)}
+
+/* Better roadmap */
+.rm-dot.done{box-shadow:0 0 12px rgba(76,175,80,.4)}.rm-dot.active{box-shadow:0 0 12px rgba(200,169,110,.5);animation:scalePulse 2s ease-in-out infinite}
+
+/* Better developer card */
+.dev-avatar-ring{animation:rotateSlow 30s linear infinite}
+.dev-card{background:linear-gradient(135deg,rgba(127,0,0,.05),rgba(200,169,110,.03)) !important}
+
+/* More visible footer */
+.footer{background:linear-gradient(180deg,var(--bg-secondary) 0%,rgba(127,0,0,.03) 100%)}
+
+/* Enhanced navbar scroll */
+.navbar.scrolled{background:rgba(7,7,15,.92) !important;backdrop-filter:blur(24px);border-bottom:1px solid rgba(200,169,110,.08)}
+
+/* Better tech cards */
+.tech-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(200,169,110,.08)}
+.tech-card h4{color:var(--gold-primary)}
+
+/* Better instructor cards */
+.instructor-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(198,40,40,.08)}
+.ic-avatar{background:linear-gradient(135deg,var(--red-primary),var(--gold-primary)) !important}
+
+/* About hero badge */
+.ah-badge{animation:scalePulse 3s ease-in-out infinite}
+
+/* Footer links hover */
+.f-links a:hover{color:var(--gold-primary) !important}
+
+/* More visible green stats */
+.stats-bar .stat-value{background:linear-gradient(180deg,var(--gold-primary),var(--accent-green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+/* Enhanced product headers */
+.ind-header h2{text-shadow:0 0 20px rgba(200,169,110,.15)}
+
+/* Better history block on RedCulture */
+.hb-body{position:relative}
+.hb-body::first-letter{font-size:2em;color:var(--red-primary);font-weight:700;float:left;line-height:1;margin-right:8px}
+
+/* Keyboard shortcut hints */
+@media(hover:hover){.hover-only{opacity:0;transition:opacity .3s}.hover-only:hover{opacity:1}}
+
+/* Perfect scrollbar */
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--red-primary),var(--gold-primary));border-radius:3px}
+
+/* Better active nav link */
+.nav-link.router-link-exact-active,.nav-link.router-link-active:not(.exact){color:var(--gold-primary) !important}
+.nav-link.router-link-exact-active::after,.nav-link.router-link-active:not(.exact)::after{background:var(--gold-primary) !important}
+
+/* Better selection */
+::selection{background:rgba(200,169,110,.25);color:#fff;text-shadow:0 0 8px rgba(200,169,110,.3)}

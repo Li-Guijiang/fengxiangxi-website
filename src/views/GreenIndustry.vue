@@ -1,7 +1,7 @@
 <template>
   <div class="green-page">
     <!-- Hero -->
-    <section class="hero-green">
+    <section class="hero-green hero-sweep">
       <div class="container">
         <div class="gh-badge reveal"><span class="dot-live"></span>{{ t('green.badge') }}</div>
         <h1 class="gh-title reveal" style="transition-delay:0.1s">{{ t('green.heroTitle') }}</h1>
@@ -19,7 +19,7 @@
 
         <!-- 快速导航 -->
         <div class="ind-nav reveal">
-          <a v-for="ind in i18nIndustries" :key="ind.id" :href="'#' + ind.id"
+          <a v-for="ind in i18nIndustries" :key="ind.id" @click.prevent="scrollToInd(ind.id)"
              class="ind-nav-item glass-card" :style="{ '--ind-color': ind.color }">
             <span class="nav-dot-2" :style="{ background: ind.color }"></span>
             {{ ind.title }}
@@ -71,7 +71,6 @@
           <div class="video-container glass-card">
             <video :ref="el => { if (el) videoRefs[ind.id] = el }"
                    :src="ind.videoUrl" controls playsinline preload="metadata"
-                   :poster="ind.images[0]"
                    class="product-video" @play="onPlay(ind.id)">
             </video>
           </div>
@@ -106,6 +105,7 @@ import { useScrollReveal } from '../composables/useScrollReveal.js'
 import { useI18n } from '../composables/useI18n.js'
 
 useScrollReveal()
+const scrollToInd = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }) }
 const { t, locale } = useI18n()
 
 const carouselIdx = reactive(industries.map(() => 0))
