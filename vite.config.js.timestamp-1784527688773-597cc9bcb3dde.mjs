@@ -4,7 +4,7 @@ import vue from "file:///C:/Users/59957/Desktop/fengxixi-website/node_modules/@v
 var vite_config_default = defineConfig({
   base: "/",
   plugins: [vue()],
-  server: { host: "0.0.0.0", port: 5173 }
+  server: { localhost: "0.0.0.0", port: 5173 }
 });
 export {
   vite_config_default as default
